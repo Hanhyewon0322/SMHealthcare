@@ -18,8 +18,8 @@
 
 
 // To declare the structure of the exercises
-static Exercise exercise_list[MAX_EXERCISES];
-int exercise_list_size = 0;
+static Exercise exercise_list[MAX_EXERCISES]; //최대 100개 운동 구조체  
+int exercise_list_size = 0;//변수 초기화 
 
 
 /*
@@ -27,8 +27,8 @@ int exercise_list_size = 0;
 */
 
 void loadExercises(const char* EXERCISEFILEPATH) {
-    FILE *file = fopen(EXERCISEFILEPATH, "r");
-    if (file == NULL) {
+    FILE *file = fopen(EXERCISEFILEPATH, "r");//파일 읽기모드로 열기 
+    if (file == NULL) {//파일 못열었다면 
         printf("There is no file for exercises! \n");
         return;
     }
@@ -36,7 +36,7 @@ void loadExercises(const char* EXERCISEFILEPATH) {
     // ToCode: to read a list of the exercises from the given file
     while ( ) {
     	
-        if (exercise_list_size >= MAX_EXERCISES){
+        if (exercise_list_size >= MAX_EXERCISES){//최대 도달시 
         	break;
 		}
     }

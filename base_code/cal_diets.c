@@ -18,8 +18,8 @@
 
 
 // list of diets 
-static Diet diet_list[MAX_DIETS];
-static int diet_list_size = 0;
+static Diet diet_list[MAX_DIETS]; // 최대 100개 구조체 저장 
+static int diet_list_size = 0; // 현재 저장된 변수 초기화 
 
 
 /*
@@ -27,8 +27,8 @@ static int diet_list_size = 0;
 */
 
 void loadDiets(const char* DIETFILEPATH) {
-    FILE *file = fopen(DIETFILEPATH, "r");
-    if (file == NULL) {
+    FILE *file = fopen(DIETFILEPATH, "r"); //파일을 읽기모드로 열기 
+    if (file == NULL) { //파일열기 실패시  
         printf("There is no file for diets! \n");
         return;
     }
@@ -36,7 +36,7 @@ void loadDiets(const char* DIETFILEPATH) {
      // ToCode: to read a list of the diets from the given file
     while () {
     	
-        if (diet_list_size >= MAX_DIETS){
+        if (diet_list_size >= MAX_DIETS){//최대에 도달했는지  
         	break;
 		}
     }
