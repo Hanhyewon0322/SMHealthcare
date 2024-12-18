@@ -1,9 +1,9 @@
 [Exercises] 
-Total calories burned: 0 kcal 
 
 [Diets] 
-Total calories intake: 0 kcal 
 
 [Total] 
-Basal metabolic rate: 1300 kcal
-The remaining calories: -1300 kcal
+±âÃÊ ´ë»ç·®: 1300
+ÃÑ ¼Ò¸ð Ä®·Î¸®: 0
+ÃÑ ¼·Ãë Ä®·Î¸®: 0
+³²Àº Ä®·Î¸®: -1300
