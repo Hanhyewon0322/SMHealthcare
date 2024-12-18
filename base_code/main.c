@@ -13,9 +13,9 @@
 #include "cal_diets.h"
 #include "cal_healthdata.h"
 
-#define EXERCISEFILEPATH "exercises.txt"
-#define DIETFILEPATH "diets.txt"
-#define HEALTHFILEPATH "health_data.txt"
+#define EXERCISEFILEPATH "C:\SMWU programming class\SMHealthcare\exercises.txt"
+#define DIETFILEPATH "C:\SMWU programming class\SMHealthcare\diets.txt"
+#define HEALTHFILEPATH "C:\SMWU programming class\SMHealthcare\health_data.txt"
 
 static int choice;
 
