@@ -31,6 +31,7 @@ int main() {
     do {
     	if (health_data.total_calories_intake - 1300 - health_data.total_calories_burned<=0){
             printf("You have consumed all your calories for today! \n");
+            break; // 남은 칼로리 (섭취 칼로리-기초대사량-소모칼로리)=0이 될시  
 		} 
 		else{
 			printf("\n=======================================================================\n");
@@ -69,7 +70,7 @@ int main() {
                 printf("[Error] Invalid option. \n");
                 printf("Please try again! \n");
         }
-    } while (choice != 4 && health_data.total_calories_intake-1300- );//나가기 옵션 선택 아니면 남은 칼로리가 0이 될시 
+    } while (choice != 4);//나가기 옵션
 
     return 0;
 }
