@@ -1,9 +1,15 @@
 [Exercises] 
-
+running, 11
+ kcal
 [Diets] 
+salad, 70 kcal
+salad, 70 kcal
+salad, 70 kcal
+salad, 70 kcal
+salad, 70 kcal
+chicken, 925 kcal
+chicken, 925 kcal
 
 [Total] 
-±âÃÊ ´ë»ç·®: 1300
-ÃÑ ¼Ò¸ð Ä®·Î¸®: 0
-ÃÑ ¼·Ãë Ä®·Î¸®: 0
-³²Àº Ä®·Î¸®: -1300
+Basal Metabolic Rate: 1300 kcal
+The remaining calories: 680 kcal

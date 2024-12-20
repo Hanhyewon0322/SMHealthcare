@@ -13,25 +13,25 @@
 #include "cal_diets.h"
 #include "cal_healthdata.h"
 
-#define EXERCISEFILEPATH "C:\SMWU programming class\SMHealthcare\exercises.txt"
-#define DIETFILEPATH "C:\SMWU programming class\SMHealthcare\diets.txt"
-#define HEALTHFILEPATH "C:\SMWU programming class\SMHealthcare\health_data.txt"
+#define EXERCISEFILEPATH "exercises.txt"
+#define DIETFILEPATH "diets.txt"
+#define HEALTHFILEPATH "health_data.txt"
 
 static int choice;
 
 int main() {
 	// To initialize the health data object
     HealthData health_data = {0};
-    
+   
     // Tocode: to read the list of the exercises and diets
-    loadExercises(EXERCISEFILEPATH);
-    loadDiets(DIETFILEPATH);
+    loadExercises("exercises.txt"); //원래는 EXERCISEFILEPATH 
+    loadDiets("diets.txt"); // 원래는 DIETFILEPATH 
 
     // ToCode: to run the "Healthcare Management Systems" until all calories are used up or the user wants to exit the system
     do {
-    	if (health_data.total_calories_intake - 1300 - health_data.total_calories_burned<=0 && health_data.total_calories_intake > 0){
+    	if (health_data.total_calories_intake - BASAL_METABOLIC_RATE - health_data.total_calories_burned<=0 && health_data.total_calories_intake > 0){
             printf("You have consumed all your calories for today! \n");
-            break; // 남은 칼로리 (섭취 칼로리-기초대사량-소모칼로리)=0이 될시  
+             // 남은 칼로리 (섭취 칼로리-기초대사량-소모칼로리)=0이 될시  
 		} 
 		else{
 			printf("\n=======================================================================\n");
@@ -60,10 +60,9 @@ int main() {
                 break;
                 
             case 4:
-            	
+            	saveData("health_data.txt", &health_data); // 종료 전 데이터 저장 
     			printf("Exit the system.\n");
     			printf("=======================================================================\n");
-                saveData(HEALTHFILEPATH, &health_data); // 종료 전 데이터 저장 
 				break;
                 
             default:
