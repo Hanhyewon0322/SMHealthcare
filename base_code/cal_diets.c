@@ -36,15 +36,15 @@ void loadDiets(const char* DIETFILEPATH) {
 
      // ToCode: to read a list of the diets from the given file
     char line[256];
-    while (fgets(line, sizeof(line), file)) 
+    while (fgets(line, sizeof(line), file)) //파일 끝에는 NULL반환 
 	{
-        char *name = strtok(line, " ");
-        char *calories = strtok(NULL, " ");
+        char *name = strtok(line, " "); //첫번쨰 빈칸까지 부분 저장 
+        char *calories = strtok(NULL, " "); //두번쨰 빈칸까지 저장 
         if (name && calories) 
 		{
-            strncpy(diet_list[diet_list_size].food_name, name, MAX_FOOD_NAME_LEN - 1);
-            diet_list[diet_list_size].food_name[MAX_FOOD_NAME_LEN - 1] = '\0';
-            diet_list[diet_list_size].calories_intake = atoi(calories);
+            strncpy(diet_list[diet_list_size].food_name, name, MAX_FOOD_NAME_LEN - 1); //문자열 복사 맥스푸드저 길이만큼 
+            diet_list[diet_list_size].food_name[MAX_FOOD_NAME_LEN - 1] = '\0'; // 문자열 종료 
+            diet_list[diet_list_size].calories_intake = atoi(calories); //정수변환  
             diet_list_size++;
         if (diet_list_size >= MAX_DIETS){//최대에 도달했는지  
         	break;
@@ -80,12 +80,12 @@ void inputDiet(HealthData* health_data) {
     // ToCode: to enter the selected diet in the health data
     if (choice > 0 && choice <= diet_list_size) 
 	{
-        strcpy(health_data->diet[health_data->diet_count].food_name, diet_list[choice-1].food_name);
+        strcpy(health_data->diet[health_data->diet_count].food_name, diet_list[choice-1].food_name); //구조체 배열에 저장하기 
         health_data->diet[health_data->diet_count].calories_intake = diet_list[choice-1].calories_intake;
         health_data->diet_count++;
 
     // ToCode: to enter the total calories intake in the health data
-	health_data->total_calories_intake += diet_list[choice-1].calories_intake;
+	health_data->total_calories_intake += diet_list[choice-1].calories_intake; // 총 칼로리 섭취량 재등록 
 	printf("Added %s to your diet. Total calories intake: %d\n", 
                diet_list[choice-1].food_name, health_data->total_calories_intake);
     } 
